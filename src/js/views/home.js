@@ -5,16 +5,12 @@ import { Context } from "../store/appContext";
 
 export const Home = () => {
 const { store, actions } = useContext(Context);
-useEffect(()=>{
-actions.loadCharaData();
-actions.loadPlanetData();
-}, [])
 	return (
-	<div className="container testimonial-group" >
+	<div className="container testimonial-group">
 	<div className="row text-center">
 		{
 		store.people.map((item,index) => (
-		<div className="col-sm-6 card-container"><Cards title={item.name} charaInfo={{gender: "male", hairColor: "brown", eyeColor: "blue"}} isFavorite={false}></Cards></div>)
+		<div className="col-sm-6 card-container" key={index}><Cards url={item.url} indice={index} properties={item.properties} title={item.name} uid={item.uid} charaInfo={true} isFavorite={false}></Cards></div>)
 		)}
 		
 		
@@ -22,7 +18,7 @@ actions.loadPlanetData();
 
 	<div className="row text-center mt-5">
 		{
-			store.planets.map((item,index) => (<div className="col-sm-6 card-container"><Cards title={item.name} planetInfo={{population: item.population, terrain: item.terrain}}></Cards></div>
+			store.planets.map((item,index) => (<div className="col-sm-6 card-container" key={index}><Cards properties={item.properties}  title={item.name} uid={item.uid} planetInfo={true}></Cards></div>
 			))
 		}
 			

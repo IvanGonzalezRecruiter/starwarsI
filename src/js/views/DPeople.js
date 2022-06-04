@@ -11,7 +11,18 @@ useEffect( () => {
 }, [])
 
   return (
-    <div>{store.pjActual.name}</div>
+    <div >
+      <h1 className='container'>{store.pjActual.name}</h1>
+      <div className='d-flex'>  
+      <p className='m-3'>Height: {store.pjActual.height}</p>
+      <p className='m-3'>Mass: {store.pjActual.mass}</p>
+      <p className='m-3'>Skin Color: {store.pjActual.skin_color}</p>
+      <p className='m-3'>Eye Color: {store.pjActual.eye_color}</p>
+      <p className='m-3'>Year of birth: {store.pjActual.birth_year}</p>
+      <p className='m-3'>Gender: {store.pjActual.gender}</p>
+      </div>
+    
+      </div>
   )
 }
 

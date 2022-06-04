@@ -17,6 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planetaActual: {},
 			pjActual: {},
+            favoritos: []
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -43,6 +44,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://www.swapi.tech/api/planets/" + uid).then(res => res.json() ).then(data => setStore({ "planetaActual": data.result.properties }))
 				
 			},
+            addFav: (item) => {
+                let favoritos = store.favoritos;
+                favoritos.push(item)
+                setStore({"favoritos": favoritos})
+            },
+            deleteFav: (uid)=>{
+             let newFav = store.favorito.filter((item) => item.uid !== uid)
+             setStore({"favorito":newFav})
+            },
+            getMorePtInfo: (url, indice) => {
+                const store = getStore();
+               fetch(url).then( resp => resp.json()).then(data => {
+                 let newPlanets = store.planets;
+                 newPlanets[indice].properties = data.result.properties;  
+                setStore ({"planets": newPlanets})
+            }).catch((error)=> console.log(error))
+            },
+            getMorePplInfo: (url, indice) => {
+                const store = getStore();
+                fetch(url).then( resp => resp.json()).then(data => {
+                  let newChara = store.people;
+                  newChara[indice].properties = data.result.properties;  
+                 setStore ({"people": newChara})
+             }).catch((error)=> console.log(error))
+             },
             changeColor: (index, color) => {
                 //get the store
                 const store = getStore();

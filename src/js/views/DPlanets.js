@@ -12,13 +12,15 @@ const DPlanets = () => {
         
 	} , [] )
   return (
-    <div className='container'>
-        <h1>{store.planetaActual.name}</h1>
-        <p>{store.planetaActual.diameter}</p>
-        <p>{store.planetaActual.rotation_period}</p>
-        <p>{store.planetaActual.orbital_period}</p>
-        <p>{store.planetaActual.gravity}</p>
-        <p>{store.planetaActual.population}</p>
+    <div>
+        <h1 className='container'>{store.planetaActual.name}</h1>
+        <div className='d-flex'> 
+        <p className='m-3'>Diameter: {store.planetaActual.diameter}</p>
+        <p className='m-3'>Rotation Period: {store.planetaActual.rotation_period}</p>
+        <p className='m-3'>Orbital Period: {store.planetaActual.orbital_period}</p>
+        <p className='m-3'>Gravity: {store.planetaActual.gravity}</p>
+        <p className='m-3'>Population: {store.planetaActual.population}</p></div>
+       
 
 
         </div>
