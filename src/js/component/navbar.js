@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
-
+import { Context } from "../store/appContext";
 export const Navbar = () => {
-	
+	const { store, actions } = useContext(Context);
+  
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light navbar-expand-sm bg-light mb-3 ">
 			
-			<div className="dropdown">
+	<div className="dropdown ">
   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
   Favorites
   </button>
