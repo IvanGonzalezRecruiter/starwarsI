@@ -44,10 +44,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://www.swapi.tech/api/planets/" + uid).then(res => res.json() ).then(data => setStore({ "planetaActual": data.result.properties }))
 				
 			},
-            addFav: (item) => {
-                let favoritos = store.favoritos;
-                favoritos.push(item)
+            addFav: (item) => { 
+                /**let favoritos = store.favoritos;**/
+                //favoritos.push(item)
+                console.log(getStore())
                 setStore({"favoritos": favoritos})
+               
             },
             deleteFav: (uid)=>{
              let newFav = store.favorito.filter((item) => item.uid !== uid)

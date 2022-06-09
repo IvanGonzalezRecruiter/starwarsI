@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 
 export const Cards = (props) => {
   const { store, actions } = useContext(Context);
+  console.log(actions)
   const click = () => {
     return (
       <div>
