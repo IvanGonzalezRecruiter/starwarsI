@@ -10,9 +10,28 @@ const DPlanets = () => {
   useEffect(() => {
     actions.planetInfo(params.uid);
   }, []);
+  const index = params.uid - 1;
   return (
     <div>
-      <h1 className="container">{store.planetaActual.name}</h1>
+      <div className="d-flex">
+      <img height={300} width={450} src={store. imgPlanets[index].url} />
+        <h1 className="container">{store.planetaActual.name}</h1>
+      
+        </div>
+        <p className="text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce leo
+          augue, tristique id nisl ut, consequat luctus felis. Nunc egestas,
+          lacus eu pharetra eleifend, ante felis tempus mi, vel tempus felis
+          nulla facilisis lorem. In hac habitasse platea dictumst. Aenean ornare
+          semper magna sit amet volutpat. Vivamus odio enim, faucibus a turpis
+          venenatis, vestibulum dictum ex. Nulla sed porttitor ipsum, quis
+          lobortis libero. Suspendisse iaculis eleifend ante, in scelerisque
+          nibh ornare a. Vestibulum id erat augue. Aliquam vel fringilla lorem,
+          sed rutrum ex. Donec in tortor venenatis lacus cursus faucibus. Aenean
+          ut consectetur diam. Etiam rhoncus tincidunt sagittis. Duis dapibus
+          rhoncus imperdiet. Nulla quis tincidunt ipsum. Ut at leo sollicitudin,
+          mattis elit id, lobortis ex.
+        </p>
       <div className="d-flex">
         <p className="m-3">Diameter: {store.planetaActual.diameter}</p>
         <p className="m-3">

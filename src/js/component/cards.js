@@ -32,9 +32,10 @@ export const Cards = (props) => {
       actions.getMorePtInfo(props.url, props.indice);
     }
   }, []);
+
   return (
     <div className="card" style={{ width: "22rem" }}>
-      <img src="..." className="card-img-top" alt="..." />
+      <img height={300} width={450} src={props.charaInfo ? store.imgCharacters[props.indice].url : store.imgPlanets[props.indice].url }  className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title mb-5">{props.title}</h5>
         {props.charaInfo && props.properties && (
@@ -51,7 +52,7 @@ export const Cards = (props) => {
             >
               Learn More
             </Link>
-            <button type="button" className="btn btn-outline-warning" onClick={()=>{actions.addFav("favorito")}}>
+            <button type="button" className="btn btn-outline-warning" onClick={()=>{actions.addFav(props.properties.name)}}>
               {props.isFavorite ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +96,7 @@ export const Cards = (props) => {
             >
               Learn More
             </Link>
-            <button type="button" className="btn btn-outline-warning">
+            <button type="button" className="btn btn-outline-warning"  onClick={()=>{actions.addFav(props.properties.name)}}>
               {props.isFavorite ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
