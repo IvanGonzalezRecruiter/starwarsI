@@ -15,10 +15,9 @@ const DPlanets = () => {
     <div>
       <div className="d-flex">
       <img height={300} width={450} src={store. imgPlanets[index].url} />
-        <h1 className="container">{store.planetaActual.name}</h1>
-      
-        </div>
-        <p className="text-center">
+      <div>
+      <h1 className="container text-center">{store.planetaActual.name}</h1>
+      <p className="container text-center py-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce leo
           augue, tristique id nisl ut, consequat luctus felis. Nunc egestas,
           lacus eu pharetra eleifend, ante felis tempus mi, vel tempus felis
@@ -32,6 +31,10 @@ const DPlanets = () => {
           rhoncus imperdiet. Nulla quis tincidunt ipsum. Ut at leo sollicitudin,
           mattis elit id, lobortis ex.
         </p>
+      </div>
+       
+        </div>
+        
       <div className="d-flex">
         <p className="m-3">Diameter: {store.planetaActual.diameter}</p>
         <p className="m-3">
