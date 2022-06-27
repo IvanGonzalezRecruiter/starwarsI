@@ -52,7 +52,7 @@ export const Cards = (props) => {
             >
               Learn More
             </Link>
-            <button type="button" className="btn btn-outline-warning" onClick={()=>{actions.addFav(props.properties.name)}}>
+            <button type="button" className="btn btn-outline-danger" onClick={()=>{actions.addFav(props.properties.name)}}>
               {props.isFavorite ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ export const Cards = (props) => {
             >
               Learn More
             </Link>
-            <button type="button" className="btn btn-outline-warning"  onClick={()=>{actions.addFav(props.properties.name)}}>
+            <button type="button" className="btn btn-outline-danger"  onClick={()=>{actions.addFav(props.properties.name)}}>
               {props.isFavorite ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
